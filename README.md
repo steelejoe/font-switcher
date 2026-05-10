@@ -1,6 +1,15 @@
 # Font Switcher
 
-A Chromium extension (Manifest V3) that scans a web page for **font combinations** actually used in the DOM—family, size, weight, and style—and lets you **replace them per site** (per origin). Overrides persist in extension storage and are reapplied when you revisit the same origin.
+<table>
+  <tr>
+    <td width="144">
+      <img src="assets/icon-128.png" alt="Font Switcher icon" width="128" height="128">
+    </td>
+    <td>
+      A Chromium extension (Manifest V3) that scans a web page for <strong>font combinations</strong> actually used in the DOM—family, size, weight, and style—and lets you <strong>replace them per site</strong> (per origin). Overrides persist in extension storage and are reapplied when you revisit the same origin.
+    </td>
+  </tr>
+</table>
 
 ## Features
 
