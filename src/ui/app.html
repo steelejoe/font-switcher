@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Font Switcher</title>
+    <link rel="stylesheet" href="app.css" />
+  </head>
+  <body>
+    <header class="top">
+      <div class="title-row">
+        <h1>Font Switcher</h1>
+        <div class="title-actions">
+          <button type="button" id="optionsBtn" class="btn ghost">Options</button>
+          <button type="button" id="resetPageBtn" class="btn ghost">Reset Page</button>
+          <button type="button" id="scanBtn" class="btn primary">Scan page</button>
+        </div>
+      </div>
+      <p class="meta">
+        <span class="label">Origin</span>
+        <code id="originLabel">—</code>
+      </p>
+      <div class="filters">
+        <label class="field">
+          <span>Font family</span>
+          <input type="search" id="filterFamily" placeholder="Filter by family…" autocomplete="off" />
+        </label>
+        <label class="field">
+          <span>Text snippet</span>
+          <input type="search" id="filterSnippet" placeholder="Filter by snippet…" autocomplete="off" />
+        </label>
+      </div>
+      <p class="hint" id="statusLine">Pick a tab via the toolbar icon or context menu, then scan.</p>
+    </header>
+
+    <main id="listRoot" class="list"></main>
+
+    <template id="rowTpl">
+      <article class="combo-card">
+        <div class="combo-head">
+          <span class="badge count"></span>
+          <span class="combo-title"></span>
+        </div>
+        <div class="snippets"></div>
+        <details class="stack-details">
+          <summary>Computed stack</summary>
+          <code class="stack"></code>
+        </details>
+        <div class="replace">
+          <span class="replace-label">Replace with</span>
+          <div class="replace-row">
+            <label class="replace-field replace-field-family">
+              <span>Family</span>
+              <div class="family-field-wrap">
+                <select class="family-select"></select>
+                <input type="text" class="in-family-custom" spellcheck="false" placeholder="Custom family or stack…" hidden />
+              </div>
+            </label>
+            <label class="replace-field replace-field-compact">
+              <span>Size</span>
+              <input class="in-size" type="text" spellcheck="false" />
+            </label>
+            <label class="replace-field replace-field-compact">
+              <span>Weight</span>
+              <input class="in-weight" type="text" spellcheck="false" />
+            </label>
+            <label class="replace-field replace-field-compact">
+              <span>Style</span>
+              <input class="in-style" type="text" spellcheck="false" />
+            </label>
+          </div>
+          <div class="actions">
+            <button type="button" class="btn primary apply-btn">Apply</button>
+            <button type="button" class="btn ghost clear-btn">Clear rule</button>
+          </div>
+        </div>
+      </article>
+    </template>
+
+    <script src="settings.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>

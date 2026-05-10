@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Font Switcher — Options</title>
+    <link rel="stylesheet" href="app.css" />
+    <style>
+      .options-page {
+        max-width: 42rem;
+        margin: 0 auto;
+        padding: 24px 20px 48px;
+      }
+      .options-page h1 {
+        font-size: 1.35rem;
+        margin: 0 0 8px;
+      }
+      .options-page .lead {
+        margin: 0 0 24px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+      .option-row {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px 16px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--panel);
+      }
+      .option-row input[type="checkbox"] {
+        margin-top: 4px;
+        width: 18px;
+        height: 18px;
+        flex-shrink: 0;
+      }
+      .option-text strong {
+        display: block;
+        font-size: 0.95rem;
+        margin-bottom: 4px;
+      }
+      .option-text p {
+        margin: 0;
+        font-size: 0.82rem;
+        color: var(--muted);
+        line-height: 1.45;
+      }
+      #optionsSaved {
+        margin-top: 16px;
+        font-size: 0.82rem;
+        color: var(--muted);
+        min-height: 1.25em;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="options-page">
+      <h1>Font Switcher options</h1>
+      <p class="lead">These settings apply everywhere in the extension.</p>
+
+      <label class="option-row">
+        <input type="checkbox" id="optShowStack" />
+        <span class="option-text">
+          <strong>Show computed font stack in the main window</strong>
+          <p>
+            When enabled, each scanned combo includes an expandable “Computed stack” section with the full
+            resolved <code style="font-size: 0.85em">font-family</code> list from the browser.
+          </p>
+        </span>
+      </label>
+
+      <p id="optionsSaved" aria-live="polite"></p>
+    </div>
+
+    <script src="settings.js"></script>
+    <script src="options.js"></script>
+  </body>
+</html>
